@@ -1,0 +1,99 @@
+/*
+CSS for xaringan slides in Niche formatting
+Author: James Sharwin
+Updated: 24/04/2019
+*/
+
+.title-slide {
+  background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets/master/Niche%20Final%20Logo%20Large%20Font%20Extended%20Hi%20Res.png);
+  background-color: #fff;
+  background-size: 99%;
+  background-position: left 10px; 
+}
+
+.remark-slide-content {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+
+.remark-slide h1{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.title-slide h1{
+  font-size: 50px;
+  color: #000000;
+  font-weight: bold;
+  text-align: left;
+  text-shadow: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
+}
+
+.title-slide h2{
+  font-size: 30px;
+  color: #FFC000;
+  text-align: left;
+  text-shadow: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
+  padding-top: 5px;
+}
+
+.title-slide h3 {
+  font-size: 25px;
+  font-weight: normal;
+  color: #AAA59F; 
+  text-align: left;
+  text-shadow: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
+  padding-top: 7px;
+}
+
+.inverseSep { 
+  color: #FFF;
+  background-color: #89C61B;
+  text-shadow: none;
+}
+
+.inverseSep h1 { 
+  font-size: 35px;
+}
+
+
+table {  
+    color: #333;
+    font-family: Arial, Arial, sans-serif;
+    font-size: 13px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {background-color: #d3d3d3;}
+tr:nth-child(odd) {background-color: #fff;}
+
+th {  
+    border: 1px solid transparent;
+    background: #89C61B;  
+    font-weight: bold;
+    color: #FFF;	
+    padding: 2px;
+}
+
+td {  
+    border: 1px solid transparent;
+    padding: 3px;
+	
+}
+
+
+
+
+
