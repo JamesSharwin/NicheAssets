@@ -2,12 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
 body { 
-  font-family: 'Verdana';
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;;
   font-weight: normal;
 
 }
 h1, h2, h3 {
-  font-family: 'Verdana';
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: normal;
 }
 

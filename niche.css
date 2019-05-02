@@ -5,10 +5,18 @@ Updated: 24/04/2019
 */
 
 .title-slide {
-  background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets/master/Niche%20Final%20Logo%20Large%20Font%20Extended%20Hi%20Res.png);
+  background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets/master/NicheSussexBackground.png);
   background-color: #fff;
-  background-size: 99%;
+  background-size: cover;
   background-position: left 10px; 
+}
+
+title-slide.remark-slide-number {
+  font-size: 10pt;
+  margin-bottom: -11.6px;
+  margin-right: 10px;
+  color: #FFFFFF; /* white */
+  opacity: 1; /* default: 0.5 */
 }
 
 .remark-slide-content {
@@ -80,7 +88,7 @@ tr:nth-child(even) {background-color: #d3d3d3;}
 tr:nth-child(odd) {background-color: #fff;}
 
 th {  
-    border: 1px solid transparent;
+    border: 0px solid transparent;
     background: #89C61B;  
     font-weight: bold;
     color: #FFF;	
@@ -88,12 +96,30 @@ th {
 }
 
 td {  
-    border: 1px solid transparent;
+    border: 0px solid transparent;
     padding: 3px;
 	
 }
 
 
 
+div.my-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    width: 80%;
+    color: #A9A9A9;
+}
+div.my-footer span {
+    font-size: 8pt;
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+}
 
-
+.remark-slide-number {
+  font-size: 8pt;
+  bottom: 10px;
+  margin-right: 10px;
+}
