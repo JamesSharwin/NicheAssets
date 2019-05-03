@@ -1,5 +1,5 @@
 ---
-title: "Title"
+title: "Template slide-pack"
 subtitle: "Niche Health and Social Care Consulting"
 author: "James Sharwin"
 date: "May 14^th^ 2019"
@@ -18,7 +18,18 @@ output:
 
 #This is a normal slide
 
-This is some text
+Normal paragraph
+
+**Bold words**
+
+*Italic words* 
+
+* Bullet
+
+* Points
+
+1. Numbered
+2. List
 
 ---
 <div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div> 
@@ -53,6 +64,7 @@ ggplot(ChickWeight, aes(x=Time,y=weight)) + geom_boxplot()
 
 ---
 background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets/master/Richmond2.png)
+background-size: cover
 <div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div> 
 
 ####If you need to include a powerpoint slide then save it as a PNG and do this^
@@ -70,6 +82,8 @@ background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets
 
 4. Print to PDF
 
+The HTML version of these slides can also be embedded into our website.
+
 
 ---
 
@@ -79,4 +93,18 @@ class: inverseSep, left, middle
 e: info@nicheconsult.co.uk
 
 t: 0161 785 1000
+
+---
+<div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div> 
+
+#Using custom CSS classes
+
+Feel free to add new custom classes to the CSS master file (niche.css, just ensure you document this in the change log at the top of the file)
+<div class="bubblewrap"><p class="bubble1"><i>"Feedback here"</i> - Jeff Jeffington, McDonalds</p></div>
+<div class="bubblewrap"><p class="bubble2"><i>"Feedback here"</i> - Jeff Jeffington, McDonalds</p></div>
+<div class="bubblewrap"><p class="bubble1"><i>"Feedback here"</i> - Jeff Jeffington, McDonalds</p></div>
+
+
+
+
 
