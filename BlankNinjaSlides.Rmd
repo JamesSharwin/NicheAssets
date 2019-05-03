@@ -1,0 +1,82 @@
+---
+title: "Title"
+subtitle: "Niche Health and Social Care Consulting"
+author: "James Sharwin"
+date: "May 14^th^ 2019"
+output:
+  xaringan::moon_reader:
+    css: [default, niche.css, niche-fonts.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+
+---
+<div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div>
+
+#This is a normal slide
+
+This is some text
+
+---
+<div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div> 
+
+#Setting up a new presentation
+
+1. Make a github repository and clone this to your PC
+
+2. Take copies of the Niche.css and Niche-fonts.css files and save them in your folder (in NicheAssets folder)
+
+3. In R studio go to **file > new file > R Markdown > From template > Ninja Presentation > OK*
+
+4. Save the R document in your folder
+
+5. If you want to add a client logo then look at the powerpoint "*Custom slide deck cover sheet*"" (in NicheAssets folder)
+
+Once you have done all this, your R workbook is ready to go
+
+---
+<div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div> 
+
+#Include R code by doing the following
+
+Take notes of all of the arguments I am passing to the block of code
+```{r UniqueNameOfThisCodeBlock, echo=TRUE,warning=TRUE,include=TRUE,message=TRUE,fig.height=4,fig.width=12}
+library(ggplot2)
+data("ChickWeight")
+ChickWeight$Time <- as.factor(ChickWeight$Time)
+ggplot(ChickWeight, aes(x=Time,y=weight)) + geom_boxplot()
+
+```
+
+---
+background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets/master/Richmond2.png)
+<div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div> 
+
+####If you need to include a powerpoint slide then save it as a PNG and do this^
+(it needs to go above. CSS first, then content)
+
+---
+
+#Getting your slides into PDF
+
+1. Have chrome as your default browser
+
+2. Knit the document
+
+3. Open in browser
+
+4. Print to PDF
+
+
+---
+
+class: inverseSep, left, middle
+
+#Slide divider or ender
+e: info@nicheconsult.co.uk
+
+t: 0161 785 1000
+

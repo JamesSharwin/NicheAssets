@@ -2,10 +2,13 @@
 CSS for xaringan slides in Niche formatting
 Author: James Sharwin
 Updated: 24/04/2019
+
+Change the title slide background-image if you want to include a client logo on the cover
+
 */
 
 .title-slide {
-  background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets/master/NicheSussexBackground.png);
+  background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets/master/NicheNoLogoBackground.png);
   background-color: #fff;
   background-size: cover;
   background-position: left 10px; 
