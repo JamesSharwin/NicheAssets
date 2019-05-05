@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="James Sharwin" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
     <link rel="stylesheet" href="niche.css" type="text/css" />
     <link rel="stylesheet" href="niche-fonts.css" type="text/css" />
   </head>
@@ -56,7 +57,7 @@ Once you have done all this, your R workbook is ready to go
 ---
 &lt;div class="my-footer"&gt;&lt;span&gt;Niche Health &amp; Social Care Consulting - All Rights Reserved - Registered in England No 08133492&lt;/span&gt;&lt;/div&gt; 
 
-#Include R code by doing the following
+#Include R code and output graphs by doing the following
 
 Take notes of all of the arguments I am passing to the block of code
 
@@ -74,13 +75,81 @@ ChickWeight$Time &lt;- as.factor(ChickWeight$Time)
 ggplot(ChickWeight, aes(x=Time,y=weight)) + geom_boxplot()
 ```
 
-![](BlankNinjaSlides_files/figure-html/UniqueNameOfThisCodeBlock-1.png)&lt;!-- --&gt;
+![](BlankNinjaSlides_files/figure-html/UniqueNameOfThisCodeBlock1-1.png)&lt;!-- --&gt;
+
 
 ---
-background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets/master/Richmond2.png)
+
+#Use the kable package to include tables
+
+
+```r
+cols &lt;- c("#89C61B","#FFC000","#7F7F7F","#0283E4","#C55A11","#FFC000","#7F7F7F","#000000")
+library(knitr)
+library(kableExtra)
+library(dplyr)
+kable(
+  head(ChickWeight),
+  format="html",
+  align = c("r", "r", "r", "r")
+    ) %&gt;% 
+  row_spec(c(2,5), bold = TRUE, italic = TRUE,color = "white", background = cols[4])
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; weight &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Time &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Chick &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Diet &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 42 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-weight: bold;font-style: italic;color: white !important;background-color: #0283E4 !important;"&gt; 51 &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;font-style: italic;color: white !important;background-color: #0283E4 !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;font-style: italic;color: white !important;background-color: #0283E4 !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;font-style: italic;color: white !important;background-color: #0283E4 !important;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 64 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;font-weight: bold;font-style: italic;color: white !important;background-color: #0283E4 !important;"&gt; 76 &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;font-style: italic;color: white !important;background-color: #0283E4 !important;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;font-style: italic;color: white !important;background-color: #0283E4 !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;font-weight: bold;font-style: italic;color: white !important;background-color: #0283E4 !important;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 93 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+---
+background-image: url(https://ichef.bbci.co.uk/news/660/cpsprodpb/DED5/production/_104154075_gettyimages-154948449.jpg)
 background-size: cover
 &lt;div class="my-footer"&gt;&lt;span&gt;Niche Health &amp; Social Care Consulting - All Rights Reserved - Registered in England No 08133492&lt;/span&gt;&lt;/div&gt; 
 
+#Images
 ####If you need to include a powerpoint slide then save it as a PNG and do this^
 (it needs to go above. CSS first, then content)
 

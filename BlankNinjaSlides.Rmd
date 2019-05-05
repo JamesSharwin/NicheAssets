@@ -51,10 +51,10 @@ Once you have done all this, your R workbook is ready to go
 ---
 <div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div> 
 
-#Include R code by doing the following
+#Include R code and output graphs by doing the following
 
 Take notes of all of the arguments I am passing to the block of code
-```{r UniqueNameOfThisCodeBlock, echo=TRUE,warning=TRUE,include=TRUE,message=TRUE,fig.height=4,fig.width=12}
+```{r UniqueNameOfThisCodeBlock1, echo=TRUE,warning=TRUE,include=TRUE,message=TRUE,fig.height=4,fig.width=12}
 library(ggplot2)
 data("ChickWeight")
 ChickWeight$Time <- as.factor(ChickWeight$Time)
@@ -62,11 +62,29 @@ ggplot(ChickWeight, aes(x=Time,y=weight)) + geom_boxplot()
 
 ```
 
+
 ---
-background-image: url(https://raw.githubusercontent.com/JamesSharwin/NicheAssets/master/Richmond2.png)
+
+#Use the kable package to include tables
+
+```{r UniqueNameOfThisCodeBlock2, echo=TRUE,warning=FALSE,include=TRUE,message=FALSE,fig.height=4,fig.width=12}
+cols <- c("#89C61B","#FFC000","#7F7F7F","#0283E4","#C55A11","#FFC000","#7F7F7F","#000000")
+library(knitr)
+library(kableExtra)
+library(dplyr)
+kable(
+  head(ChickWeight),
+  format="html",
+  align = c("r", "r", "r", "r")
+    ) %>% 
+  row_spec(c(2,5), bold = TRUE, italic = TRUE,color = "white", background = cols[4])
+```
+---
+background-image: url(https://ichef.bbci.co.uk/news/660/cpsprodpb/DED5/production/_104154075_gettyimages-154948449.jpg)
 background-size: cover
 <div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div> 
 
+#Images
 ####If you need to include a powerpoint slide then save it as a PNG and do this^
 (it needs to go above. CSS first, then content)
 
