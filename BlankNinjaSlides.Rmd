@@ -54,11 +54,14 @@ Once you have done all this, your R workbook is ready to go
 #Include R code and output graphs by doing the following
 
 Take notes of all of the arguments I am passing to the block of code
-```{r UniqueNameOfThisCodeBlock1, echo=TRUE,warning=TRUE,include=TRUE,message=TRUE,fig.height=4,fig.width=12}
+```{r UniqueNameOfThisCodeBlock1, echo=TRUE,warning=FALSE,include=TRUE,message=FALSE,fig.height=4,fig.width=12}
+cols <- c("#89C61B","#FFC000","#7F7F7F","#0283E4","#C55A11","#FFC000","#7F7F7F","#000000")
 library(ggplot2)
 data("ChickWeight")
 ChickWeight$Time <- as.factor(ChickWeight$Time)
-ggplot(ChickWeight, aes(x=Time,y=weight)) + geom_boxplot()
+ggplot(ChickWeight, aes(x=Time,y=weight,fill=Diet)) + 
+  geom_boxplot() +
+  scale_fill_manual(values=cols)
 
 ```
 

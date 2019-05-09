@@ -62,17 +62,13 @@ Once you have done all this, your R workbook is ready to go
 Take notes of all of the arguments I am passing to the block of code
 
 ```r
+cols &lt;- c("#89C61B","#FFC000","#7F7F7F","#0283E4","#C55A11","#FFC000","#7F7F7F","#000000")
 library(ggplot2)
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.5.1
-```
-
-```r
 data("ChickWeight")
 ChickWeight$Time &lt;- as.factor(ChickWeight$Time)
-ggplot(ChickWeight, aes(x=Time,y=weight)) + geom_boxplot()
+ggplot(ChickWeight, aes(x=Time,y=weight,fill=Diet)) + 
+  geom_boxplot() +
+  scale_fill_manual(values=cols)
 ```
 
 ![](BlankNinjaSlides_files/figure-html/UniqueNameOfThisCodeBlock1-1.png)&lt;!-- --&gt;
