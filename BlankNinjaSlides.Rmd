@@ -121,9 +121,9 @@ t: 0161 785 1000
 #Using custom CSS classes
 
 Feel free to add new custom classes to the CSS master file (niche.css, just ensure you document this in the change log at the top of the file)
-<div class="bubblewrap"><p class="bubble1"><i>"Feedback here"</i> - Jeff Jeffington, McDonalds</p></div>
-<div class="bubblewrap"><p class="bubble2"><i>"Feedback here"</i> - Jeff Jeffington, McDonalds</p></div>
-<div class="bubblewrap"><p class="bubble1"><i>"Feedback here"</i> - Jeff Jeffington, McDonalds</p></div>
+<div class="bubblewrap"><p class="bubble1"><i>"Feedback here"</i> - Name 1, Company 1</p></div>
+<div class="bubblewrap"><p class="bubble2"><i>"Feedback here"</i> - Name 2, Company 2</p></div>
+<div class="bubblewrap"><p class="bubble1"><i>"Feedback here"</i> - Name 3, Company 3</p></div>
 
 
 
