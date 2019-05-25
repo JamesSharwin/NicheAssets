@@ -1,5 +1,3 @@
-library(extrafont)
-library(tidyverse)
 
 cols = c("#89C61B","#FFC000","#7F7F7F","#0283E4","#C55A11","#FFC000","#7F7F7F","#000000")
 ggplot <- function(...) ggplot2::ggplot(...) + 
