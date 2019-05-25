@@ -9,7 +9,7 @@ niche_style <- function(){
   theme(
     plot.title = element_text(family = "Arial",size=24, face="bold", color="#222222"),
     plot.subtitle = element_text(family = "Arial",size=18,margin = margin(5,0,15,0)),
-    
+    plot.background = element_rect(fill = "Grey90"),
     panel.grid.minor = element_blank(),
     panel.grid.major.y = element_line(color="Grey85"),
     panel.grid.major.x = element_line(color="White"),  
