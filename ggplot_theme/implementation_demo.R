@@ -12,7 +12,7 @@ library(tidyverse)
 library(devtools)
 library(tidyverse)
 
-source_url("https://raw.githubusercontent.com/nicheconsult/NicheAssets/master/niche_theme.R")
+source_url("https://raw.githubusercontent.com/nicheconsult/NicheAssets/master/ggplot_theme/niche_theme.R")
 
 
 data("ChickWeight")
