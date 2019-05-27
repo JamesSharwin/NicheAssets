@@ -7,8 +7,10 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 niche_style <- function(){
   theme(
-    plot.title = element_text(family = "Arial",size=24, face="bold", color="#222222"),
-    plot.subtitle = element_text(family = "Arial",size=18,margin = margin(5,0,15,0)),
+    plot.title = element_text(family = "Arial",size=24, face="bold", color="#222222",margin = margin(10,0,10,0)),
+    plot.subtitle = element_text(family = "Arial",size=18,margin = margin(10,0,20,0)),
+    
+    
     plot.background = element_rect(fill = "white"),
     panel.grid.minor = element_blank(),
     panel.grid.major.y = element_line(color="Grey85"),
@@ -17,7 +19,8 @@ niche_style <- function(){
     panel.spacing.y = unit(.75,"lines"),
     
     axis.title = element_text(family = "Arial",size=14,color="#222222",margin=margin(2,2,2,2)),
-    axis.text = element_text(family = "Arial",size=12,color="#222222",margin=margin(2,2,2,2)),
+    axis.text = element_text(family = "Arial",size=12,color="#222222",margin=margin(7,2,2,2)),
+    
     axis.ticks = element_blank(),
     axis.line = element_blank(),
     

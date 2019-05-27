@@ -1,18 +1,19 @@
-
+##Font loading if necessary
 #install.packages("extraFont")
-
 #install.packages("windowsFonts")
 #font_import()
 #loadfonts(device = "win")
 
-#install.packages("tidyverse")
 
+#standard library loads
 library(extrafont)
 library(tidyverse)
 library(devtools)
 library(tidyverse)
 
 source_url("https://raw.githubusercontent.com/nicheconsult/NicheAssets/master/ggplot_theme/niche_theme.R")
+
+
 
 
 data("ChickWeight")
@@ -84,4 +85,20 @@ ggplot(x,aes(x=Time,y=Weight,fill=Diet)) +
   scale_y_continuous(expand=c(0,0)) + 
   coord_cartesian(ylim=c(0,300)) +
   niche_style() 
+
+
+ChickWeight$Time <- as.factor(ChickWeight$Time)
+
+x <- ChickWeight %>% filter(Time %in% c(4,8,12,16,20))
+
+ggplot(x,aes(x=weight,fill=Diet)) + 
+  geom_density(color=NA) + 
+  niche_style() +
+  facet_grid(Diet~Time) +
+  labs(
+    title = "Distribution over time",
+    x = "Weight",
+    y = "Point density"
+  )
+
 
