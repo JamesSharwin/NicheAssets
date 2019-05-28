@@ -14,6 +14,24 @@ output:
 
 
 ---
+
+```{r ThemeData, echo= FALSE, warning=FALSE,include=FALSE}
+##Font loading if necessary
+#install.packages("extraFont")
+#install.packages("windowsFonts")
+#font_import()
+#loadfonts(device = "win")
+
+#standard library loads
+library(extrafont)
+library(tidyverse)
+library(devtools)
+library(tidyverse)
+
+source_url("https://raw.githubusercontent.com/nicheconsult/NicheAssets/master/ggplot_theme/niche_theme.R")
+
+
+```
 <div class="my-footer"><span>Niche Health & Social Care Consulting - All Rights Reserved - Registered in England No 08133492</span></div>
 
 #This is a normal slide
@@ -61,7 +79,9 @@ data("ChickWeight")
 ChickWeight$Time <- as.factor(ChickWeight$Time)
 ggplot(ChickWeight, aes(x=Time,y=weight,fill=Diet)) + 
   geom_boxplot() +
-  scale_fill_manual(values=cols)
+  scale_y_continuous(expand=c(0,0)) + 
+  coord_cartesian(ylim = c(0,400)) + 
+  niche_style()
 
 ```
 
