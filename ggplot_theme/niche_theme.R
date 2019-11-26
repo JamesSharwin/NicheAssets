@@ -36,3 +36,26 @@ niche_style <- function(){
   ) 
 }
 
+######
+#Ben's slight style edits
+niche_style_bh = function(){
+  theme(plot.title = element_text(family = "Arial",size=24, face="bold", color="#222222",margin = margin(10,0,10,0)),
+        plot.subtitle = element_text(family = "Arial",size=18,margin = margin(0,0,10,0)),
+        plot.background = element_rect(fill = "white"),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_line(color="Grey85"),
+        panel.grid.major.x = element_line(color="White"),  
+        panel.background = element_rect(fill="White",color="White"),
+        panel.spacing.y = unit(.75,"lines"),
+        axis.title = element_text(family = "Arial",size=12,color="#222222",margin=margin(2,2,2,2),face="bold"),
+        axis.text = element_text(family = "Arial",size=10,color="#222222",margin=margin(7,2,2,2),face="italic"),
+        axis.ticks = element_blank(),
+        axis.line = element_blank(),
+        legend.position = "top",
+        legend.text = element_text(family = "Arial",size=10, color="#222222"),
+        legend.title = element_blank(),
+        legend.background = element_rect(fill="#ffffff"),
+        legend.key = element_rect(fill = "#ffffff"),
+        strip.background = element_rect(fill="grey85",color="Grey75"),
+        strip.text = element_text(family = "Arial",size = 10,color="black",face="bold"))
+}
