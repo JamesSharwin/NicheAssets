@@ -1,65 +1,50 @@
-##Font loading if necessary
-#install.packages("extraFont")
-#install.packages("windowsFonts")
-#font_import()
-#loadfonts(device = "win")
-
-
 #standard library loads
-library(extrafont)
 library(tidyverse)
 library(devtools)
-library(tidyverse)
 
 source_url("https://raw.githubusercontent.com/nicheconsult/NicheAssets/master/ggplot_theme/niche_theme.R")
-
-
-
 
 data("ChickWeight")
 
 #Multiple line plot
-x <- ChickWeight %>%
+x1 <- ChickWeight %>%
   group_by(Time,Diet) %>%
-  summarise(Weight = mean(weight))
+  summarise(Weight = mean(weight)) %>% ungroup() %>%
+  mutate(Time = as.factor(Time))
 
-x$Time <- as.factor(x$Time)
-
-ggplot(x,aes(x=Time,y=Weight,color=Diet,group=Diet)) +
-  geom_line(size=1) + 
+ggplot(x1, aes(x=Time,y=Weight,color=Diet,group=Diet)) +
+  geom_line(size=2) + scale_color_manual(values = niche_cols) +
   labs(title = "Total chicken weight over time",
        subtitle = "Really groundbreaking stuff",
        x = "Time",
        y = "Weight") +
   coord_cartesian(ylim=c(0,300)) +
   scale_y_continuous(expand=c(0,0)) + 
-  niche_style() 
+  niche_style_bh()
 
 #Single line chart
-x <- ChickWeight %>%
+x2 <- ChickWeight %>%
   group_by(Time) %>%
-  summarise(Weight = mean(weight))
+  summarise(Weight = mean(weight)) %>% ungroup() %>%
+  mutate(Time = as.factor(Time))
 
-x$Time <- as.factor(x$Time)
-
-ggplot(x,aes(x=Time,y=Weight,group=1)) +
-  geom_line(size=1,color=cols[1]) + 
+ggplot(x2,aes(x=Time, y=Weight, group = 0)) +
+  geom_line(size=2, color=niche_cols[1]) + 
   labs(title = "Total chicken weight over time",
        subtitle = "Really groundbreaking stuff",
        x = "Time",
        y = "Weight") +
   coord_cartesian(ylim=c(0,300)) +
   scale_y_continuous(expand=c(0,0)) + 
-  niche_style() 
+  niche_style_bh() 
 
 #Single bar chart
-x <- ChickWeight %>%
+x3 <- ChickWeight %>%
   group_by(Time,Diet) %>%
-  summarise(Weight = mean(weight))
+  summarise(Weight = mean(weight)) %>% ungroup() %>%
+  mutate(Time = as.factor(Time))
 
-x$Time <- as.factor(x$Time)
-
-ggplot(x,aes(x=Time,y=Weight,fill=Diet)) +
+ggplot(x3,aes(x=Time,y=Weight,fill=Diet)) +
   geom_col() + 
   labs(title = "Total chicken weight over time",
        subtitle = "Really groundbreaking stuff",
@@ -69,13 +54,12 @@ ggplot(x,aes(x=Time,y=Weight,fill=Diet)) +
   niche_style() 
 
 #Faceted bar chart
-x <- ChickWeight %>%
+x4 <- ChickWeight %>%
   group_by(Time,Diet) %>%
-  summarise(Weight = mean(weight))
+  summarise(Weight = mean(weight)) %>% ungroup() %>%
+  mutate(Time = as.factor(Time))
 
-x$Time <- as.factor(x$Time)
-
-ggplot(x,aes(x=Time,y=Weight,fill=Diet)) +
+ggplot(x4,aes(x=Time,y=Weight,fill=Diet)) +
   geom_col() + 
   facet_grid(Diet~.) +
   labs(title = "Total chicken weight over time",
@@ -86,10 +70,8 @@ ggplot(x,aes(x=Time,y=Weight,fill=Diet)) +
   coord_cartesian(ylim=c(0,300)) +
   niche_style() 
 
-
-ChickWeight$Time <- as.factor(ChickWeight$Time)
-
-x <- ChickWeight %>% filter(Time %in% c(4,8,12,16,20))
+#Density plot
+x5 <- ChickWeight %>% filter(Time %in% c(4,8,12,16,20))
 
 ggplot(x,aes(x=weight,fill=Diet)) + 
   geom_density(color=NA) + 
